@@ -9,6 +9,9 @@ const styles = {
     float: 'left',
     margin: '2% 0'
   },
+  head: {
+    width: '100%'
+  },
   select: {
     width: '10%',
     float: 'left'
@@ -87,15 +90,17 @@ const Department = React.createClass({
 
     return (
       <div style={styles.department}>
-        <div style={styles.select}>
-          <input type="checkbox" style={styles.checkbox} checked={this.state.hasSelectedAll} onChange={this.handleSelectChange}/>
-        </div>
-        <div style={styles.titleArea} onClick={this.handleExpand}>
-          <div style={styles.title}>{this.props.department.title}</div>
-          <div style={styles.iconArea}>{icon}</div>
-        </div>
-        <div style={styles.countArea}>
-          <div style={styles.count}>{sum}</div>
+        <div style={styles.head}>
+          <div style={styles.select}>
+            <input type="checkbox" style={styles.checkbox} checked={this.state.hasSelectedAll} onChange={this.handleSelectChange}/>
+          </div>
+          <div style={styles.titleArea} onClick={this.handleExpand}>
+            <div style={styles.title}>{this.props.department.title}</div>
+            <div style={styles.iconArea}>{icon}</div>
+          </div>
+          <div style={styles.countArea}>
+            <div style={styles.count}>{sum}</div>
+          </div>
         </div>
         {lists}
       </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import LeftNav from './left-nav';
 
+const title = "招聘职位";
+
 const data = [
   {
     title: "工程研发部门",
@@ -45,12 +47,15 @@ const data = [
 const App = React.createClass({
 
   getInitialState() {
-    return {data: json};
+    return {
+      data: data,
+      title: title
+    };
   },
 
   render() {
     return (
-        <LeftNav data={this.state.data}/>
+        <LeftNav data={this.state.data} title={this.state.title}/>
     );
   }
 });

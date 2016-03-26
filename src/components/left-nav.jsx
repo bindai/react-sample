@@ -1,10 +1,7 @@
 import React from 'react';
 import Department from './department';
 
-const title = "招聘职位";
-
 const styles = {
-
   leftNav: {
     width: '30%',
     minHeight: '600px',
@@ -43,7 +40,8 @@ const styles = {
 
 const LeftNav = React.createClass({
   propTypes: {
-    data: React.PropTypes.array.isRequired
+    data: React.PropTypes.array.isRequired,
+    title: React.PropTypes.string.isRequired
   },
 
   getInitialState() {
@@ -62,7 +60,7 @@ const LeftNav = React.createClass({
     return (
       <div style={styles.leftNav}>
         <div style={styles.head}>
-          <div style={styles.title}>{title}</div>
+          <div style={styles.title}>{this.props.title}</div>
           <div style={styles.clearButton}><button style={styles.button} onClick={this.clearAllSelect}><span style={styles.clearText}>清空</span></button></div>
         </div>
         {departments}
