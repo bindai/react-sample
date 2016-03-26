@@ -19,6 +19,12 @@ const Department = React.createClass({
     });
   },
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      hasSelectedAll: !nextProps.clearAll
+    })
+  },
+
   render() {
     let jobs = this.props.department.jobs.map((item, index) => <Job key={index} job={item} isSelected={this.state.hasSelectedAll} />);
     let sum = this.props.department.jobs.map((item) => item.count).reduce((prev, curr) => prev + curr);

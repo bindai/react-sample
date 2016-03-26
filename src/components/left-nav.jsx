@@ -8,13 +8,24 @@ const LeftNav = React.createClass({
     data: React.PropTypes.array.isRequired
   },
 
+  getInitialState() {
+    return {clearAll: false};
+  },
+
+  clearAllSelect() {
+    this.setState({clearAll: true});
+  },
+
   render() {
     let departments = this.props.data.map((item, index) => {
-      return <Department key={index} department={item}/>;
+      return <Department key={index} department={item} clearAll={this.state.clearAll}/>;
     });
 
     return (
       <div>
+        <div>
+          <button onClick={this.clearAllSelect}>清空</button>
+        </div>
         <div>{title}</div>
         {departments}
       </div>
