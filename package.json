@@ -19,7 +19,8 @@
   "homepage": "https://github.com/bindai/react-sample#readme",
   "dependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-icons": "^1.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.7.4",
