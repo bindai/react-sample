@@ -7,12 +7,25 @@ const Department = React.createClass({
     department: React.PropTypes.object.isRequired
   },
 
+  getInitialState() {
+    return {
+      hasSelectedAll: false
+    };
+  },
+
+  handleSelectChange(event) {
+    this.setState({
+      hasSelectedAll: event.target.checked
+    });
+  },
+
   render() {
-    let jobs = this.props.department.jobs.map((item, index) => <Job key={index} job={item}/>);
+    let jobs = this.props.department.jobs.map((item, index) => <Job key={index} job={item} isSelected={this.state.hasSelectedAll} />);
     let sum = this.props.department.jobs.map((item) => item.count).reduce((prev, curr) => prev + curr);
 
     return (
       <div>
+        <input type="checkbox" checked={this.state.hasSelectedAll} onChange={this.handleSelectChange}/>
         <div>{this.props.department.title}</div>
         <div>{sum}</div>
         {jobs}
