@@ -44,9 +44,13 @@ const data = [
 
 const App = React.createClass({
 
+  getInitialState() {
+    return {data: json};
+  },
+
   render() {
     return (
-        <LeftNav data={data}/>
+        <LeftNav data={this.state.data}/>
     );
   }
 });
