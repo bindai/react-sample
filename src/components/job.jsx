@@ -1,5 +1,24 @@
 import React from 'react';
 
+const styles = {
+  job: {
+    width: '100%',
+    float: 'left'
+  },
+  select: {
+    width: '10%',
+    float: 'left'
+  },
+  title: {
+    width: '80%',
+    float: 'left'
+  },
+  count: {
+    width: '10%',
+    float: 'left'
+  }
+};
+
 const Job = React.createClass({
 
   propTypes: {
@@ -9,28 +28,26 @@ const Job = React.createClass({
 
   getInitialState() {
     return {
-      isSelected: this.props.isSelected||false
+      isSelected: this.props.isSelected || false
     };
   },
 
   handleSelectChange(event) {
-    this.setState({
-      isSelected: event.target.checked
-    });
+    this.setState({isSelected: event.target.checked});
   },
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      isSelected: nextProps.isSelected
-    })
+    this.setState({isSelected: nextProps.isSelected})
   },
 
   render() {
     return (
-      <div>
-        <input type="checkbox" checked={this.state.isSelected} onChange={this.handleSelectChange}/>
-        <div>{this.props.job.title}</div>
-        <div>{this.props.job.count}</div>
+      <div style={styles.job}>
+        <div style={styles.select}>
+          <input type="checkbox" checked={this.state.isSelected} onChange={this.handleSelectChange}/>
+        </div>
+        <div style={styles.title}>{this.props.job.title}</div>
+        <div style={styles.count}>{this.props.job.count}</div>
       </div>
     );
   }

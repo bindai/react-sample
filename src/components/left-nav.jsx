@@ -3,6 +3,25 @@ import Department from './department';
 
 const title = "招聘职位";
 
+const styles = {
+
+  leftNav: {
+    width: '30%',
+    minHeight: '600px'
+  },
+  head: {
+    width: '100%'
+  },
+  title: {
+    width: '80%',
+    float: 'left'
+  },
+  clearButton: {
+    width: '20%',
+    float: 'left'
+  }
+}
+
 const LeftNav = React.createClass({
   propTypes: {
     data: React.PropTypes.array.isRequired
@@ -22,11 +41,11 @@ const LeftNav = React.createClass({
     });
 
     return (
-      <div>
-        <div>
-          <button onClick={this.clearAllSelect}>清空</button>
+      <div style={styles.leftNav}>
+        <div style={styles.head}>
+          <div style={styles.title}>{title}</div>
+          <div style={styles.clearButton}><button onClick={this.clearAllSelect}>清空</button></div>
         </div>
-        <div>{title}</div>
         {departments}
       </div>
     );
