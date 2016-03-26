@@ -8,10 +8,10 @@ const data = [
     title: "工程研发部门",
     jobs: [
       {
-        title: "Mac开发工程师",
+        title: "Mac 开发工程师",
         count: 9
       }, {
-        title: "iOS App测试工程师",
+        title: "iOS App 测试工程师",
         count: 17
       }, {
         title: "Android 远程控制工程师",

@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import Job from './job';
 import {FaAngleDown, FaAngleUp} from 'react-icons/lib/fa';
+import Checkbox from 'material-ui/lib/checkbox';
 
 const styles = {
   department: {
@@ -12,13 +13,13 @@ const styles = {
   head: {
     width: '100%'
   },
-  select: {
-    width: '10%',
-    float: 'left'
-  },
   titleArea: {
-    width: '80%',
-    float: 'left'
+    float: 'left',
+    width: '90%'
+  },
+  selectArea: {
+    float: 'left',
+    width: '50%'
   },
   title: {
     float: 'left',
@@ -29,10 +30,12 @@ const styles = {
   },
   iconArea: {
     float: 'left',
-    paddingLeft: '3%'
+    cursor: 'pointer'
   },
   icon: {
-    color: '#FFFFFF'
+    float: 'left',
+    color: '#FFFFFF',
+    paddingTop: '5%'
   },
   countArea: {
     width: '10%',
@@ -47,9 +50,7 @@ const styles = {
     fontFamily: 'Sans-serif'
   },
   checkbox: {
-    width: '2em',
-    height: '2em',
-    cursor: 'pointer'
+    fill: '#FFFFFF'
   }
 };
 
@@ -91,12 +92,13 @@ const Department = React.createClass({
     return (
       <div style={styles.department}>
         <div style={styles.head}>
-          <div style={styles.select}>
-            <input type="checkbox" style={styles.checkbox} checked={this.state.hasSelectedAll} onChange={this.handleSelectChange}/>
-          </div>
-          <div style={styles.titleArea} onClick={this.handleExpand}>
-            <div style={styles.title}>{this.props.department.title}</div>
-            <div style={styles.iconArea}>{icon}</div>
+          <div style={styles.titleArea}>
+            <div style={styles.selectArea}>
+              <Checkbox label={this.props.department.title} labelStyle={styles.title} iconStyle={styles.checkbox} checked={this.state.hasSelectedAll}  onCheck={this.handleSelectChange}/>
+            </div>
+            <div style={styles.iconArea} onClick={this.handleExpand}>
+              <div style={styles.icon}>{icon}</div>
+            </div>
           </div>
           <div style={styles.countArea}>
             <div style={styles.count}>{sum}</div>

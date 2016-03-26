@@ -1,17 +1,18 @@
 import React from 'react';
+import Checkbox from 'material-ui/lib/checkbox';
 
 const styles = {
   job: {
     width: '100%',
     float: 'left'
   },
-  select: {
-    width: '10%',
+  selectArea: {
+    width: '80%',
     float: 'left',
     marginLeft: '10%'
   },
   title: {
-    width: '70%',
+    width: '80%',
     float: 'left',
     color: '#E6E6E6',
     fontSize: '14px',
@@ -26,9 +27,7 @@ const styles = {
     fontFamily: 'Sans-serif'
   },
   checkbox: {
-    width: '2em',
-    height: '2em',
-    cursor: 'pointer'
+    fill: '#E6E6E6'
   }
 };
 
@@ -56,10 +55,9 @@ const Job = React.createClass({
   render() {
     return (
       <div style={styles.job}>
-        <div style={styles.select}>
-          <input type="checkbox" style={styles.checkbox} checked={this.state.isSelected} onChange={this.handleSelectChange}/>
+        <div style={styles.selectArea}>
+          <Checkbox label={this.props.job.title} labelStyle={styles.title} iconStyle={styles.checkbox} checked={this.state.isSelected}  onCheck={this.handleSelectChange}/>
         </div>
-        <div style={styles.title}>{this.props.job.title}</div>
         <div style={styles.count}>{this.props.job.count}</div>
       </div>
     );
