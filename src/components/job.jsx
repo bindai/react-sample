@@ -7,15 +7,28 @@ const styles = {
   },
   select: {
     width: '10%',
-    float: 'left'
+    float: 'left',
+    marginLeft: '10%'
   },
   title: {
-    width: '80%',
-    float: 'left'
+    width: '70%',
+    float: 'left',
+    color: '#E6E6E6',
+    fontSize: '14px',
+    fontFamily: 'Sans-serif'
   },
   count: {
     width: '10%',
-    float: 'left'
+    float: 'left',
+    color: '#E6E6E6',
+    textAlign: 'right',
+    fontSize: '15px',
+    fontFamily: 'Sans-serif'
+  },
+  checkbox: {
+    width: '2em',
+    height: '2em',
+    cursor: 'pointer'
   }
 };
 
@@ -44,7 +57,7 @@ const Job = React.createClass({
     return (
       <div style={styles.job}>
         <div style={styles.select}>
-          <input type="checkbox" checked={this.state.isSelected} onChange={this.handleSelectChange}/>
+          <input type="checkbox" style={styles.checkbox} checked={this.state.isSelected} onChange={this.handleSelectChange}/>
         </div>
         <div style={styles.title}>{this.props.job.title}</div>
         <div style={styles.count}>{this.props.job.count}</div>
