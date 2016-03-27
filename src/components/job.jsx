@@ -14,20 +14,20 @@ const styles = {
   title: {
     width: '80%',
     float: 'left',
-    color: '#E6E6E6',
+    color: '#CBD5D9',
     fontSize: '14px',
     fontFamily: 'Sans-serif'
   },
   count: {
     width: '10%',
     float: 'left',
-    color: '#E6E6E6',
+    color: '#CBD5D9',
     textAlign: 'right',
     fontSize: '15px',
     fontFamily: 'Sans-serif'
   },
   checkbox: {
-    fill: '#E6E6E6'
+    fill: '#96A9B2'
   }
 };
 

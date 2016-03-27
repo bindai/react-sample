@@ -44,13 +44,13 @@ const styles = {
   count: {
     color: '#FFFFFF',
     borderRadius: '10px',
-    backgroundColor: '#516A76',
+    backgroundColor: '#405763',
     textAlign: 'center',
     fontSize: '15px',
     fontFamily: 'Sans-serif'
   },
   checkbox: {
-    fill: '#FFFFFF'
+    fill: '#8297A2'
   }
 };
 

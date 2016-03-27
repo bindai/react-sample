@@ -5,7 +5,7 @@ const styles = {
   leftNav: {
     width: '30%',
     minHeight: '600px',
-    backgroundColor: '#607D8B',
+    backgroundColor: '#4D6A79',
     padding: '4% 3%'
   },
   head: {
@@ -14,7 +14,7 @@ const styles = {
   title: {
     width: '80%',
     float: 'left',
-    color: '#E6E6E6',
+    color: '#CBD4D9',
     fontSize: '20px',
     fontFamily: 'Sans-serif'
   },
